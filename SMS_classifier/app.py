@@ -1,11 +1,12 @@
 import streamlit as st
+import pickle
 
 # Load the SVM model and TF-IDF vectorizer
-with open('svm_model.pkl', 'rb') as f:
-    svm_model = pickle.load(f)
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
-with open('tfidf_vectorizer.pkl', 'rb') as f:
-    tfidf_vectorizer = pickle.load(f)
+with open('vectorizer.pkl', 'rb') as f:
+    vectorizer = pickle.load(f)
 
 # Define function to preprocess input text
 def preprocess_text(text):
@@ -18,10 +19,10 @@ def predict(text):
     preprocessed_text = preprocess_text(text)
     
     # Convert preprocessed text to TF-IDF vector
-    tfidf_vector = tfidf_vectorizer.transform([preprocessed_text])
+    tfidf_vector = vectorizer.transform([preprocessed_text])
     
     # Make prediction using the loaded SVM model
-    prediction = svm_model.predict(tfidf_vector)
+    prediction = model.predict(tfidf_vector)
     
     return prediction
 
