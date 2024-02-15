@@ -2,10 +2,10 @@ import streamlit as st
 import pickle
 
 # Load the SVM model and TF-IDF vectorizer
-with open('model.pkl', 'rb') as f:
+with open('SMS_classifier/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-with open('vectorizer.pkl', 'rb') as f:
+with open('SMS_classifier/vectorizer.pkl', 'rb') as f:
     vectorizer = pickle.load(f)
 
 # Define function to preprocess input text
