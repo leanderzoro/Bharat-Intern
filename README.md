@@ -1,3 +1,3 @@
 # Bharat-Intern
 
-## Projects i did in online intern
+## Projects I did in online intern
